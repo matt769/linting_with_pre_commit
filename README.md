@@ -44,7 +44,8 @@ git commit -m "Try to add bad formatting" # though now our bad changes have been
 This isn't quite server-side checking in the sense describe by the pre-commit package, but we'll achieve a similar result using Github actions.  
 
 Add a workflow file in `.github/workflows`, basically following the instructions here: https://github.com/pre-commit/action  
-And black now gets run upon push to github
+And black now gets run upon push to github  
+![workflow](black_action_passed.png)
 
 
 
