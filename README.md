@@ -1,3 +1,5 @@
+![linting](https://github.com/matt769/using_pre_commit/workflows/linting/badge.svg)
+
 General information about what git hooks are and do: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks  
 Info about setting up pre-commit: https://pre-commit.com/ - most of the steps here are just following the instructions here.
 
@@ -37,6 +39,17 @@ The linter did make the necessary changes though, so we can just run the previou
 git add scripts/format_me.py
 git commit -m "Try to add bad formatting" # though now our bad changes have been automatically fixed
 ```
+
+## Server side checking
+This isn't quite server-side checking in the sense describe by the pre-commit package, but we'll achieve a similar result using Github actions.  
+
+Add a workflow file in `.github/workflows`, basically following the instructions here: https://github.com/pre-commit/action  
+And black now gets run upon push to github
+
+
+
+
+
 
 
 
