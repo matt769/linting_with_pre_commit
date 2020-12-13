@@ -22,4 +22,21 @@ source pc_venv/bin/activate
 pre-commit install
 pre-commit run --all-files
 ```
+This will modify the python file with any required formatting changes.
+
+### Test the pre-commit action
+Make some questionable changes to the python file  
+Try to commit it  
+```shell script
+git add scripts/format_me.py
+git commit -m "Try to add bad formatting"
+```
+Assuming the changes aren't consistent with the black formatting rules, the pre-commit action (which runs the black linter) will abort the commit.  
+The linter did make the necessary changes though, so we can just run the previous commands again. 
+```shell script
+git add scripts/format_me.py
+git commit -m "Try to add bad formatting" # though now our bad changes have been automatically fixed
+```
+
+
 
