@@ -60,7 +60,8 @@ And black now gets run upon push to github
 ![workflow](black_action_passed.png)
 
 
-
+## More checks
+Further checks can be added by adding more hooks to `pre-commit-config.yaml`. These will now be run automatically when commiting locally and by the github action that we added.  
 
 
 
