@@ -1,7 +1,9 @@
 ![linting](https://github.com/matt769/using_pre_commit/workflows/linting/badge.svg)
 
+This repo is mainly for my own reference in using pre-commit to perform linting checks.  
+
 General information about what git hooks are and do: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks  
-Info about setting up pre-commit: https://pre-commit.com/ - most of the steps here are just following the instructions here.
+Info about setting up pre-commit: https://pre-commit.com/ - most of the steps here are just following the instructions there.
 
 ## Client side checking
 I.e. check your local changes when you run `git commit ...` command
@@ -15,7 +17,17 @@ pip install pre-commit
 ```
 
 ### Define a hook using a yaml file
-THe file `pre-commit-config.yaml` for formatting python code using [black](https://pypi.org/project/black/).  
+```yaml
+repos:
+  -   repo: https://github.com/psf/black
+      rev: 19.3b0
+      hooks:
+        -   id: black
+```
+The file `pre-commit-config.yaml` for formatting python code using [black](https://pypi.org/project/black/).  
+
+Actually we don't really define the hook (what to run) here, we just refer to some pre-existing hook definition, specifically the one with the id `black` in the `.pre-commit-hooks.yaml` file in the referenced repository.  
+
 A `pyproject.toml` file is included that includes some configuration for black.
 
 ### Use pre-commit to set up the hooks
