@@ -2,7 +2,7 @@ name: linting
 on: [push]
 jobs:
   lint:
-    name: Check python formatting
+    name: Check formatting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
